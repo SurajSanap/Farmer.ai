@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="index.html">Home</a></li>
+<li><a href="CropRecommendation.html">Crop</a></li>
+<li><a href="FertilizerRecommendation.html" class="active">Fertilizer</a></li>
+<li><a href="PesticideRecommendation.html">Pesticide</a></li>
+{% endblock %}
+
+{% block body %}
+<div style="padding-top: 5%; padding-bottom: 5%; padding-left: 15%; padding-right: 15%;">
+    <p style="color: #c79c60; font-size: 20px; font-family: 'Recursive', sans-serif;">
+        Difference between desired value of N and your farm's N value is {{ diff_n }}</p>
+    <p style="color: black; font-size: 20px; font-family: 'Recursive', sans-serif;">{{ recommendation1 | safe }}</p>
+    <p style="color: #c79c60; font-size: 20px; font-family: 'Recursive', sans-serif;">
+        Difference between desired value of P and your farm's P value is {{ diff_p }}</p>
+    <p style="color: black; font-size: 20px; font-family: 'Recursive', sans-serif;">{{ recommendation2 | safe }}</p>
+    <p style="color: #c79c60; font-size: 20px; font-family: 'Recursive', sans-serif;">
+        Difference between desired value of K and your farm's K value is {{ diff_k }}</p>
+    <p style="color: black; font-size: 20px; font-family: 'Recursive', sans-serif;">{{ recommendation3 | safe }}</p>
+</div>
+{% endblock %}

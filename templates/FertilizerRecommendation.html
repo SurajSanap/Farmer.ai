@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="index.html">Home</a></li>
+<li><a href="CropRecommendation.html">Crop</a></li>
+<li><a href="FertilizerRecommendation.html" class="active">Fertilizer</a></li>
+<li><a href="PesticideRecommendation.html">Pesticide</a></li>
+{% endblock %}
+
+{% block body %}
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Get informed advice on fertilizer based on soil</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 40rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{url_for('fertilizer_recommend')}}">
+    <div class="form-group">
+      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen (ratio)</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Nitrogen"
+        name="nitrogen"
+        max="100"
+        min="0"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 17px"
+        ><b>Phosphorous (ratio)</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        max="100"
+        min="0"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Potassium" style="font-size: 17px"><b>Potassium (ratio)</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Potassium"
+        name="potassium"
+        max="100"
+        min="0"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="crop" style="font-size: 17px"
+        ><b>Crop you want to grow</b></label>
+      <select
+        name="cropname"
+        class="form-control"
+        id="crop"
+        placeholder="Select a crop"
+        style="font-weight: bold"
+        required
+      >
+        <option selected>apple</option>
+        <option>banana</option>
+        <option>blackgram</option>
+        <option>chickpea</option>
+        <option>coconut</option>
+        <option>coffee</option>
+        <option>cotton</option>
+        <option>grapes</option>
+        <option>groundnut</option>
+        <option>jute</option>
+        <option>kidneybeans</option>
+        <option>lentil</option>
+        <option>maize</option>
+        <option>mango</option>
+        <option>mothbeans</option>
+        <option>mungbean</option>
+        <option>muskmelon</option>
+        <option>mustard</option>
+        <option>orange</option>
+        <option>paddy</option>
+        <option>papaya</option>
+        <option>pearlmillet</option>
+        <option>pigeonpea</option>
+        <option>pomegranate</option>
+        <option>rapeseed</option>
+        <option>rice</option>
+        <option>sorghum</option>
+        <option>sugarcane</option>
+        <option>watermelon</option>
+        <option>wheat</option>
+      </select>
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <button type="submit"
+        style="color: #c79c60; font-weight: bold;
+         background-color: black;
+         width: 130px; height:50px; border-radius:12px; font-size: 21px;">
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

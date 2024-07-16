@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="index.html">Home</a></li>
+<li><a href="CropRecommendation.html">Crop</a></li>
+<li><a href="FertilizerRecommendation.html">Fertilizer</a></li>
+<li><a href="PesticideRecommendation.html" class="active">Pesticide</a></li>
+{% endblock %}
+
+{% block body %}
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+    <b>Identified Pest: <i>stem borer</i></b>
+</h2>
+
+ <section>
+
+        <div class="container">
+            <h3 style="padding: 15px; background-color: rgb(0, 0, 0); color: #c79c60; font-weight: bold;"
+                class="text-center my-3 content-h3">
+                Recommended Products</h3>
+        </div>
+
+<div class="container">
+            <div class="card-columns">
+                <div class="card" style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%; margin-left:5%; height:300px; width:300px;"
+                             class="img-fluid" src="static/img/pesticide/stem borer/cartop.jpg" alt="cartop">
+                      <h3 class="card-text">Dose: 1000 ml/Ha</h3>
+                    </div>
+                </div>
+                <div class="card" style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%; height:300px; width:300px;"
+                             class="img-fluid" src="static/img/pesticide/stem borer/voter.jpg" alt="voter">
+                        <h3 class="card-text">Dose: 24 gm/Ha</h3>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}

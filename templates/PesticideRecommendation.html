@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="index.html">Home</a></li>
+<li><a href="CropRecommendation.html">Crop</a></li>
+<li><a href="FertilizerRecommendation.html">Fertilizer</a></li>
+<li><a href="PesticideRecommendation.html" class="active">Pesticide</a></li>
+{% endblock %}
+
+{% block body %}
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Recommended pesticide based on pest</b>
+</h2>
+<h3 align="center">Please upload the picture which clearly shows the pest,<br>
+            so that we can recommend you, the pesticide accordingly!</h3>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 40rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+    <section>
+            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+                <input type="file" name="image" class="upload" style="font-size: 15px;">
+                <br>
+                <input type="submit" value="Predict" style="color: #c79c60; font-weight: bold;
+                background-color: black;
+                width: 130px; height:50px; border-radius:12px; font-size: 21px;">
+            </form>
+    </section>
+</div>
+{% endblock %}

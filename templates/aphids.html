@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="index.html">Home</a></li>
+<li><a href="CropRecommendation.html">Crop</a></li>
+<li><a href="FertilizerRecommendation.html">Fertilizer</a></li>
+<li><a href="PesticideRecommendation.html" class="active">Pesticide</a></li>
+{% endblock %}
+
+{% block body %}
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+    <b>Identified Pest: <i>aphids</i></b>
+</h2>
+
+ <section>
+
+        <div class="container">
+            <h3 style="padding: 15px; background-color: rgb(0, 0, 0); color: #c79c60; font-weight: bold;"
+                class="text-center my-3 content-h3">
+                Recommended Products</h3>
+        </div>
+
+<div class="container">
+            <div class="card-columns">
+                <div class="card" style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%; margin-left:5%;"
+                             class="img-fluid" src="static/img/pesticide/aphids/banzo.jpg" alt="banzo">
+                      <h3 class="card-text">Dose: 330 ml/acre</h3>
+                    </div>
+                </div>
+                <div class="card" style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%;"
+                             class="img-fluid" src="static/img/pesticide/aphids/derby.jpg" alt="derby">
+                        <h3 class="card-text">Dose: 600 gm/Ha</h3>
+                    </div>
+                </div>
+                <div class="card " style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%;"
+                             class="img-fluid" src="static/img/pesticide/aphids/fulstop-d.jpg" alt="fulstop-d">
+                        <h3 class="card-text">Dose: 1000 ml/Ha</h3>
+                    </div>
+                </div>
+                <div class="card " style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%;"
+                             class="img-fluid" src="static/img/pesticide/aphids/intice.jpg" alt="intice">
+                        <h3 class="card-text">Dose: 30-35 gm/Ha</h3>
+                    </div>
+                </div>
+                <div class="card " style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%;"
+                             class="img-fluid" src="static/img/pesticide/aphids/ultimo-200-sl.jpg" alt="Ultimo 200 SL">
+                        <h3 class="card-text">Dose: 100-150 ml/Ha</h3>
+                    </div>
+                </div>
+              <div class="card " style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%;"
+                             class="img-fluid" src="static/img/pesticide/aphids/ultimo-super.jpg" alt="Ultimo Super">
+                        <h3 class="card-text">Dose: 60-75 ml/Ha</h3>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}
