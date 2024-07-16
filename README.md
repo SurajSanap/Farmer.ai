@@ -1,7 +1,9 @@
 # Farmer.ai
-![image](https://github.com/SurajSanap/Farmer.ai/assets/101057653/a65ee3e9-f7bd-448c-968f-0050b9353e52)
+![Screenshot 2024-07-12 002052](https://github.com/user-attachments/assets/51fccbdc-5585-430f-8ea3-d3e538b03668)
 
-![image](https://github.com/SurajSanap/Farmer.ai/assets/101057653/0f9e0d04-75d6-4518-8cbf-e56df52a78b1)
+
+![Screenshot 2024-07-12 002205](https://github.com/user-attachments/assets/fc0741c9-b82c-4e80-989d-c78ebb9e3c68)
+
 
 
 ## Problem Definition
