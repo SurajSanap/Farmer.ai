@@ -11,7 +11,7 @@ gast
 google-pasta
 grpcio
 gunicorn
-h5py
+#h5py
 importlib-metadata
 itsdangerous
 Jinja2
@@ -44,3 +44,4 @@ wrapt
 zipp
 opencv-python
 keras
+scikit-learn==1.4.2
