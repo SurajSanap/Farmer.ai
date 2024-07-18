@@ -9,10 +9,10 @@
 
 {% block body %}
 <br /><br />
-<h2 style="text-align: center; margin: 0px; color: black">
+<h2 style="text-align: center; margin: 0px; color: wheat">
   <b>Recommended pesticide based on pest</b>
 </h2>
-<h3 align="center">Please upload the picture which clearly shows the pest,<br>
+<h3 align="center" style="color:white; margin-top:35px">Please upload the picture which clearly shows the pest,<br>
             so that we can recommend you, the pesticide accordingly!</h3>
 <br />
 
@@ -21,18 +21,18 @@
     width: 350px;
     height: 40rem;
     margin: 0px auto;
-    color: black;
+    color: white;
     border-radius: 25px;
     padding: 10px 10px;
   "
 >
     <section>
             <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
-                <input type="file" name="image" class="upload" style="font-size: 15px;">
+                <input type="file" name="image" class="upload" style="font-size: 15px;margin-left:100px;margin-top:30px">
                 <br>
                 <input type="submit" value="Predict" style="color: #c79c60; font-weight: bold;
                 background-color: black;
-                width: 130px; height:50px; border-radius:12px; font-size: 21px;">
+                width: 130px; height:50px; border-radius:12px; font-size: 21px; margin-left:100px;margin-top:30px">
             </form>
     </section>
 </div>

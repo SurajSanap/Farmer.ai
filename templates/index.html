@@ -6,24 +6,20 @@
 <li><a href="FertilizerRecommendation.html">Fertilizer</a></li>
 <li><a href="PesticideRecommendation.html">Pesticide</a></li>
 {% endblock %}
-
 {% block body %}
-<section class="tm-welcome-section">
+<section class="background">
     <div class="container tm-position-relative">
-      <div class="tm-lights-container">
-        <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light light-1" height="188px" width="200px">
+      <div class="png tm-lights-container">
+        <!-- <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light light-1" height="188px" width="200px"> -->
         <img src="{{ url_for('static', filename='img/light.png') }}" alt="Light" class="light light-2" height="188px" width="200px">
-        <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light light-3" height="188px" width="200px">
+         <!-- <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light light-3" height="188px" width="200px"> -->
         <br>
       </div>
       <div class="row tm-welcome-content">
         <br><br>
-        <h2 class="white-text tm-handwriting-font tm-welcome-header">
-          <img src="{{ url_for('static', filename='img/header-line.png') }}" alt="Line"
-            class="tm-header-line">&nbsp;Welcome To&nbsp;&nbsp;<img src="{{ url_for('static', filename='img/header-line.png') }}" alt="Line"
-            class="tm-header-line"></h2>
-        <h2 class="gold-text tm-welcome-header-2">Farmer.ai</h2>
-        <p class="gray-text tm-welcome-description"><span
+        <h2 class="heading gold-text tm-handwriting-font">Welcome To</h2>
+        <h2 class="mainheading gold-text tm-welcome-header-2">Farmer.ai</h2>
+        <p class="white-text tm-welcome-description"><span
             class="gold-text">Farm = AI + Crop + Fertilizer + Pesticide.</span> We take of your soil's health. We at <span class="gold-text">
           Farmer.ai</span>, honor <span
                 class="gold-text">the Indian Farmer's love, hard work and character.</span>
@@ -34,14 +30,14 @@
         keep them healthy for a super awesome yield.</p>
         <br><br><br>
       </div>
-      <img <img src="{{ url_for('static', filename='img/farmerai2.jpg') }}" alt="Table Set" class="tm-table-set img-responsive" width="100%" style="display: block; margin: auto;">
+      <img <img src="https://sageuniversity.edu.in/assets/images/blog/use-of-modern-technology-in-agriculture.webp" alt="Table Set" class="tm-table-set img-responsive" width="69%" style="display: block; margin-bottom: 90px; margin-left: 150px; border:2px solid #c69c60; border-radius:50px">
 
     </div>
   </section>
-  <div class="tm-main-section light-gray-bg">
+  <div class="background">
     <div class="container" id="main">
       <section class="tm-section tm-section-margin-bottom-0 row">
-        <div class="col-lg-12 tm-section-header-container">
+        <div class="col-lg-12 tm-section-header-container" style="margin-top:30px">
           <div class="tm-hr-container">
             <hr class="tm-hr">
           </div>
@@ -84,8 +80,7 @@
                   class="tm-handwriting-font bigger-first-letter">P</span>esticide Recommendation</h3>
               <hr class="tm-popular-item-hr">
               <p>Pests are a big threat.
-                Use Farmer.ai to know which pesticide to use to control pests before they cause potential damage to your
-                crop?</p>
+                Use Farmer.ai to know which pesticide use to control pests before they cause potential damage to crop?</p>
               <div class="order-now-container">
                 <a href="PesticideRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
               </div>
@@ -96,32 +91,32 @@
     </div>
   </div>
 
-<footer>
-    <div class="tm-black-bg">
-      <div class="container">
+<footer class="background">
+    <div >
+      <div class="container" style="margin-left:430px">
         <div class="row margin-bottom-60">
           <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
-            <h3 class="tm-footer-div-title">Project by</h3>
+            <h3 class="tm-footer-div-title"style="color:#c69c60">Project by</h3>
             <ul>
-              <li>Suraj Sanap</li>
+              <li class="white-text">Suraj Sanap</li>
         
               
             </ul>
           </nav>
-          <div class="col-lg-5 col-md-5 tm-footer-div">
-            <h3 class="tm-footer-div-title">Few words for our Indian Farmers</h3>
-            <p class="margin-top-15" align="justify">For this one farmer the worries are over, lie down and rest your head,
+          <div class="col-lg-5 col-md-5 tm-footer-div" style="margin-left:-55px">
+            <h3 class="tm-footer-div-title" style="color:#c69c60">Few words for our Indian Farmers</h3>
+            <p class="margin-top-15 white-text" align="justify" >For this one farmer the worries are over, lie down and rest your head,
               Your time has been and struggles enough, put the tractor in the shed.</p>
 
-             <p class="margin-top-15" align="justify"> Years were not easy, many downright hard, but your faith in God transcended,
+             <p class="margin-top-15 white-text" align="justify"> Years were not easy, many downright hard, but your faith in God transcended,
                Put away your tools and sleep in peace. The fences have all been mended.</p>
 
-              <p class="margin-top-15" align="justify">You raised a fine family, worked the land well and always followed the Son,
+              <p class="margin-top-15 white-text" align="justify">You raised a fine family, worked the land well and always followed the Son,
                 Hang up your shovel inside of the barn; your work here on earth is done.</p>
 
           </div>
-          <div class="col-lg-4 col-md-4 tm-footer-div">
-            <h3 class="tm-footer-div-title">Connect With me</h3>
+          <div class="col-lg-4 col-md-4 tm-footer-div white-text" style="margin-left:15px">
+            <h3 class="tm-footer-div-title" style="color:#c69c60">Connect With me</h3>
             
             Suraj Sanap &nbsp;
               <a href="https://www.linkedin.com/in/surajsanap01/" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
