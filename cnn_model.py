@@ -4,6 +4,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
+import matplotlib.pyplot as plt
 
 # Initializing the CNN
 classifier = Sequential()
@@ -37,7 +39,7 @@ classifier.compile(
     metrics=['accuracy']
 )
 
-# Part 2 Fitting the CNN to the image
+# Part 2 - Fitting the CNN to the images
 train_datagen = ImageDataGenerator(
     rescale=1./255,
     shear_range=0.2,
@@ -61,19 +63,28 @@ test_set = test_datagen.flow_from_directory(
     class_mode='categorical'
 )
 
+# Adding ModelCheckpoint and EarlyStopping
+checkpoint = ModelCheckpoint('best_model.keras', monitor='val_accuracy', save_best_only=True, mode='max')
+early_stopping = EarlyStopping(monitor='val_accuracy', patience=10, mode='max')
+
+# Calculate steps per epoch and validation steps
+steps_per_epoch = training_set.samples // training_set.batch_size
+validation_steps = test_set.samples // test_set.batch_size
+
 model = classifier.fit(
     training_set,
-    steps_per_epoch=100,
+    steps_per_epoch=steps_per_epoch,
     epochs=100,
     validation_data=test_set,
-    validation_steps=6500
+    validation_steps=validation_steps,
+    callbacks=[checkpoint, early_stopping]
 )
 
-# Saving the model
-classifier.save('Trained_Model.h5')
+# Saving the final model
+classifier.save('final_model.keras')
 
+# Plotting the accuracy and loss
 print(model.history.keys())
-import matplotlib.pyplot as plt
 
 # Summarize history for accuracy
 plt.plot(model.history['accuracy'])
