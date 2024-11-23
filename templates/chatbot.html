@@ -103,7 +103,7 @@
         try {
             const response = await fetch("https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium", {
                 method: "POST",
-                headers: { Authorization: "Bearer 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" },
+                headers: { Authorization: "Bearer YOUR_API" },
                 body: JSON.stringify({ inputs: userMessage }),
             });
             const result = await response.json();
