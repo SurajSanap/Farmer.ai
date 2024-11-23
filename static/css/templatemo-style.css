@@ -223,9 +223,13 @@ ul {
 .tm-section-margin-bottom-0 { margin-bottom: 0; }
 
 /* Welcome */
+/* General Welcome Section Styling */
 .tm-welcome-section {
-  background: #000000;
+  position: relative; /* Enable absolute positioning for child elements */
   text-align: center;
+  padding: 50px 0;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
 }
 .white-text { color: white; }
 .blue-text { color: #0066CC; }
@@ -242,7 +246,14 @@ ul {
   margin: 150px auto 350px;
   max-width: 650px;
 }
-.tm-welcome-description { text-align: justify; }
+.tm-welcome-description {
+  text-align: center; /* Center-align the text */
+  font-size: 1.5rem; /* Adjust the font size */
+  line-height: 2rem; /* Add spacing between lines for readability */
+  max-width: 800px; /* Limit the width of the text */
+  margin: 20px auto; /* Center the text horizontally with auto margin */
+  color: #ccc; /* Set a readable light gray color */
+}
 .tm-welcome-img-container { text-align: right; }
 .tm-more-button-welcome { margin: 40px auto; }
 .tm-more-button {  
@@ -771,5 +782,182 @@ input[type=file]::file-selector-button {
   width: 100px; height:40px; border-radius:12px; font-size: 15px;
 }
 
+.animated-stickers-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.sticker-container {
+  margin-bottom: 20px;
+}
+
+.sticker-container lottie-player {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sticker-container p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
 
+
+.animated-text {
+  animation: float 3s infinite;
+  display: inline-block;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+/* Swing animation for Treepod stickers */
+.treepod-swing {
+  position: relative; /* Ensure it stays in the document flow */
+  z-index: 0; /* Lower z-index than the chatbot icon */
+}
+
+
+/* Keyframes for the swing effect */
+@keyframes swing {
+  0% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(-5deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75% {
+      transform: rotate(5deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+/* Lottie Container Styling */
+/* Lottie Container Styling */
+.lottie-container {
+  position: absolute; /* Allow it to overlap the black background */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment adjustment */
+  top: 60%; /* Position below the text */
+  z-index: 2; /* Ensure it is above other elements */
+}
+
+/* Chatbot Icon */
+#chatbot-icon {
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#chatbot-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Chatbot Container */
+#chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+#chatbot-container.hidden {
+  display: none;
+}
+
+#chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#chatbot-header h3 {
+  margin: 0;
+}
+
+#chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 10px 0 10px;
+}
+
+.user-message {
+  text-align: right;
+  color: #007bff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.bot-message {
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#chatbot-input {
+  width: calc(100% - 20px);
+  margin: 10px 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#chatbot-container button {
+  margin: 0 10px 10px 10px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
