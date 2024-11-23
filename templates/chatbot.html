@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="/" class="active">Home</a></li>
+<li><a href="/CropRecommendation.html">Crop</a></li>
+<li><a href="/FertilizerRecommendation.html">Fertilizer</a></li>
+<li><a href="/PesticideRecommendation.html">Pesticide</a></li>
+<li><a href="/chatbot.html">Chatbot</a></li>
+{% endblock %}
+
+{% block body %}
+<section class="tm-welcome-section">
+    <div class="container tm-position-relative">
+        <div class="tm-lights-container">
+            <!-- Treepod Lights -->
+            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+        </div>
+        <div class="row tm-welcome-content">
+            <h2 class="white-text tm-handwriting-font tm-welcome-header">
+                Chat with <span class="gold-text">AI Assistant</span>
+            </h2>
+            <p class="gray-text tm-welcome-description">
+                Have your queries answered by our smart chatbot, powered by AI.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Chat Container -->
+<div class="chat-container" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); width: 70%; max-width: 800px; background: #ffffff; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+    <div class="chat-header" style="background: #15a537; color: rgb(10, 31, 20); text-align: center; padding: 10px; font-size: 18px;">
+        AI Chatbot
+    </div>
+    <div class="chat-messages" id="chat-messages" style="height: 300px; overflow-y: auto; padding: 10px; background: #56d181;"></div>
+    <div class="chat-footer" style="display: flex; align-items: center; padding: 10px; background: #0c1e0f;">
+        <input type="text" id="chat-input" placeholder="Type your message here..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+        <button id="send-button" style="margin-left: 10px; padding: 10px 20px; background: #00fe0d; color: white; border: none; border-radius: 5px; font-size: 16px;">Send</button>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="tm-black-bg">
+        <div class="container">
+            <div class="row margin-bottom-60">
+                <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
+                    <h3 class="tm-footer-div-title">Project by</h3>
+                    <ul>
+                        <li>Suraj Sanap</li>
+                    </ul>
+                </nav>
+                <div class="col-lg-5 col-md-5 tm-footer-div">
+                    <h3 class="tm-footer-div-title">Few words for our Indian Farmers</h3>
+                    <p class="margin-top-15" align="justify">For this one farmer, the worries are over, lie down and rest your head,
+                        Your time has been and struggles enough, put the tractor in the shed.</p>
+                    <p class="margin-top-15" align="justify">Years were not easy, many downright hard, but your faith in God transcended,
+                        Put away your tools and sleep in peace. The fences have all been mended.</p>
+                    <p class="margin-top-15" align="justify">You raised a fine family, worked the land well and always followed the Son,
+                        Hang up your shovel inside of the barn; your work here on earth is done.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 tm-footer-div">
+                    <h3 class="tm-footer-div-title">Connect With me</h3>
+                    Suraj Sanap &nbsp;
+                    <a href="https://www.linkedin.com/in/surajsanap01/" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/SurajSanap" class="tm-social-icon"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row tm-copyright">
+                <p class="col-lg-12 small copyright-text text-center">Copyright &copy; Suraj Sanap 2024</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const messagesContainer = document.getElementById("chat-messages");
+    const inputField = document.getElementById("chat-input");
+    const sendButton = document.getElementById("send-button");
+
+    function appendMessage(content, sender = "bot") {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message", sender);
+        messageDiv.textContent = content;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+    }
+
+    async function sendMessage() {
+        const userMessage = inputField.value.trim();
+        if (!userMessage) return;
+
+        // Append user message
+        appendMessage(userMessage, "user");
+        inputField.value = "";
+
+        // Simulate bot response
+        try {
+            const response = await fetch("https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium", {
+                method: "POST",
+                headers: { Authorization: "Bearer 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" },
+                body: JSON.stringify({ inputs: userMessage }),
+            });
+            const result = await response.json();
+            appendMessage(result.generated_text || "Sorry, I didn't understand that.");
+        } catch (error) {
+            appendMessage("Error: Unable to process your request.");
+        }
+    }
+
+    // Event listeners
+    sendButton.addEventListener("click", sendMessage);
+    inputField.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    });
+</script>
+
+{% endblock %}
