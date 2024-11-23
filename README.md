@@ -1,14 +1,12 @@
-# Farmer.ai
+# CultiVision
 
 ## Problem Definition
 * Farmers face challenges in choosing the right crop based on soil characteristics, leading to reduced productivity and soil degradation.
 * Lack of awareness about soil requirements, organic fertilizers, and standard fertilizers contributes to imbalanced fertilization and nutrient management issues.
 * Annual crop losses of Rs. 50,000 crore occur due to pests in India.
   
-![Screenshot 2024-07-12 002052](https://github.com/user-attachments/assets/51fccbdc-5585-430f-8ea3-d3e538b03668)
+![Screen Recording 2024-11-23 193838](https://github.com/user-attachments/assets/328fff0d-4ad5-4dd3-b8c5-c1a44fe2fae4)
 
-
-![Screenshot 2024-07-12 002205](https://github.com/user-attachments/assets/fc0741c9-b82c-4e80-989d-c78ebb9e3c68)
 
 
 ## Objective
