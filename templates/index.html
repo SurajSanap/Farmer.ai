@@ -1,148 +1,152 @@
 {% extends "layout.html" %}
 
 {% block nav %}
-<li><a href="index.html" class="active">Home</a></li>
-<li><a href="CropRecommendation.html">Crop</a></li>
-<li><a href="FertilizerRecommendation.html">Fertilizer</a></li>
-<li><a href="PesticideRecommendation.html">Pesticide</a></li>
+<li><a href="/" class="active">Home</a></li>
+<li><a href="/CropRecommendation.html">Crop</a></li>
+<li><a href="/FertilizerRecommendation.html">Fertilizer</a></li>
+<li><a href="/PesticideRecommendation.html">Pesticide</a></li>
 <li><a href="/chatbot.html">Chatbot</a></li> 
 {% endblock %}
 
 {% block body %}
 <section class="tm-welcome-section">
     <div class="container tm-position-relative">
-      <div class="tm-lights-container">
-        <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light light-1" height="188px" width="200px">
-        <img src="{{ url_for('static', filename='img/light.png') }}" alt="Light" class="light light-2" height="188px" width="200px">
-        <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light light-3" height="188px" width="200px">
-        <br>
-      </div>
-      <div class="row tm-welcome-content">
-        <br><br>
-        <h2 class="white-text tm-handwriting-font tm-welcome-header">
-          <img src="{{ url_for('static', filename='img/header-line.png') }}" alt="Line"
-            class="tm-header-line">&nbsp;Welcome To&nbsp;&nbsp;<img src="{{ url_for('static', filename='img/header-line.png') }}" alt="Line"
-            class="tm-header-line"></h2>
-        <h2 class="gold-text tm-welcome-header-2">Farmer.ai</h2>
-        <p class="gray-text tm-welcome-description"><span
-            class="gold-text">Farm = AI + Crop + Fertilizer + Pesticide.</span> We take of your soil's health. We at <span class="gold-text">
-          Farmer.ai</span>, honor <span
-                class="gold-text">the Indian Farmer's love, hard work and character.</span>
-          They help to feed a nation whose population is nearly 1.4 billion.
-          However their productivity is threatened by some natural factors that can ruin their crops and their livelihoods.
-          Farmer.ai is a small initiative enhancing agriculture, make smart decisions to consider
-        the demographics of your field, the factors affecting your crop, as well as how to
-        keep them healthy for a super awesome yield.</p>
-        <br><br><br>
-      </div>
-      <img <img src="{{ url_for('static', filename='img/farmerai2.jpg') }}" alt="Table Set" class="tm-table-set img-responsive" width="100%" style="display: block; margin: auto;">
+        <div class="tm-lights-container">
+            <!-- Treepod Lights -->
+            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+        </div>
+        <div class="row tm-welcome-content">
+            <h2 class="white-text tm-handwriting-font tm-welcome-header animated-text">
+                Welcome to <span class="gold-text">Farmer.ai</span>
+            </h2>
+            <p class="gray-text tm-welcome-description animated-description">
+                Empowering farmers with AI-driven solutions for crops, fertilizers, and pesticides.
+            </p>
+        </div>
 
+        <!-- Lottie Animation Overlapping the Background -->
+        <div class="lottie-container">
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player
+                src="https://lottie.host/e9b32f36-354b-4063-886c-5a190dfb9824/TdysiUs1f9.lottie"
+                background="transparent"
+                speed="1"
+                style="width: 800px; height: 400px;"
+                loop
+                autoplay>
+            </dotlottie-player>
+        </div>
     </div>
-  </section>
-  <div class="tm-main-section light-gray-bg">
-    <div class="container" id="main">
-      <section class="tm-section tm-section-margin-bottom-0 row">
-        <div class="col-lg-12 tm-section-header-container">
-          <div class="tm-hr-container">
-            <hr class="tm-hr">
-          </div>
-          <h2 class="tm-section-header gold-text tm-handwriting-font">Our Services</h2>
-          <div class="tm-hr-container">
-            <hr class="tm-hr">
-          </div>
+</section>
+
+<!-- Blocks-->
+<div class="tm-main-section light-gray-bg">
+  <div class="container" id="main">
+    <section class="tm-section tm-section-margin-bottom-0 row">
+      <div class="col-lg-12 tm-section-header-container">
+        <div class="tm-hr-container">
+          <hr class="tm-hr">
         </div>
-        <div class="col-lg-12 tm-popular-items-container">
-          <div class="tm-popular-item">
-            <img src="{{ url_for('static', filename='img/popular-2.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
-            <div class="tm-popular-item-description">
-              <h3 class="tm-handwriting-font tm-popular-item-title"><span
-                  class="tm-handwriting-font bigger-first-letter">C</span>rop Recommendation</h3>
-              <hr class="tm-popular-item-hr">
-              <p>Which crop to grow, that is ideally suited to conditions?
-                Make an informed decision before starting the cultivation of crops.</p>
-              <div class="order-now-container">
-                <a href="CropRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="tm-popular-item">
-            <img src="{{ url_for('static', filename='img/popular-3.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
-            <div class="tm-popular-item-description">
-              <h3 class="tm-handwriting-font tm-popular-item-title"><span
-                  class="tm-handwriting-font bigger-first-letter">F</span>ertilizer Recommendation</h3>
-              <hr class="tm-popular-item-hr">
-              <p>Which fertilizer to choose for the cultivated soil and prescribed crop for optimum production?
-              Provide your crops, the essential nutrients.</p>
-              <div class="order-now-container">
-                <a href="FertilizerRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="tm-popular-item">
-            <img src="{{ url_for('static', filename='img/popular-1.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
-            <div class="tm-popular-item-description">
-              <h3 class="tm-handwriting-font tm-popular-item-title"><span
-                  class="tm-handwriting-font bigger-first-letter">P</span>esticide Recommendation</h3>
-              <hr class="tm-popular-item-hr">
-              <p>Pests are a big threat.
-                Use Farmer.ai to know which pesticide to use to control pests before they cause potential damage to your
-                crop?</p>
-              <div class="order-now-container">
-                <a href="PesticideRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
-              </div>
+        <h2 class="tm-section-header gold-text tm-handwriting-font">Our Services</h2>
+        <div class="tm-hr-container">
+          <hr class="tm-hr">
+        </div>
+      </div>
+      <div class="col-lg-12 tm-popular-items-container">
+        <div class="tm-popular-item">
+          <img src="{{ url_for('static', filename='img/popular-2.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
+          <div class="tm-popular-item-description">
+            <h3 class="tm-handwriting-font tm-popular-item-title"><span
+                class="tm-handwriting-font bigger-first-letter">C</span>rop Recommendation</h3>
+            <hr class="tm-popular-item-hr">
+            <p>Which crop to grow, that is ideally suited to conditions?
+              Make an informed decision before starting the cultivation of crops.</p>
+            <div class="order-now-container">
+              <a href="CropRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
             </div>
           </div>
         </div>
-      </section>
+        <div class="tm-popular-item">
+          <img src="{{ url_for('static', filename='img/popular-3.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
+          <div class="tm-popular-item-description">
+            <h3 class="tm-handwriting-font tm-popular-item-title"><span
+                class="tm-handwriting-font bigger-first-letter">F</span>ertilizer Recommendation</h3>
+            <hr class="tm-popular-item-hr">
+            <p>Which fertilizer to choose for the cultivated soil and prescribed crop for optimum production?
+            Provide your crops, the essential nutrients.</p>
+            <div class="order-now-container">
+              <a href="FertilizerRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="tm-popular-item">
+          <img src="{{ url_for('static', filename='img/popular-1.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
+          <div class="tm-popular-item-description">
+            <h3 class="tm-handwriting-font tm-popular-item-title"><span
+                class="tm-handwriting-font bigger-first-letter">P</span>esticide Recommendation</h3>
+            <hr class="tm-popular-item-hr">
+            <p>Pests are a big threat.
+              Use Farmer.ai to know which pesticide to use to control pests before they cause potential damage to your
+              crop?</p>
+            <div class="order-now-container">
+              <a href="PesticideRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+  <div class="tm-black-bg">
+    <div class="container">
+      <div class="row margin-bottom-60">
+        <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
+          <h3 class="tm-footer-div-title">Project by</h3>
+          <ul>
+            <li>Suraj Sanap</li>
+      
+            
+          </ul>
+        </nav>
+        <div class="col-lg-5 col-md-5 tm-footer-div">
+          <h3 class="tm-footer-div-title">Few words for our Indian Farmers</h3>
+          <p class="margin-top-15" align="justify">For this one farmer the worries are over, lie down and rest your head,
+            Your time has been and struggles enough, put the tractor in the shed.</p>
+
+           <p class="margin-top-15" align="justify"> Years were not easy, many downright hard, but your faith in God transcended,
+             Put away your tools and sleep in peace. The fences have all been mended.</p>
+
+            <p class="margin-top-15" align="justify">You raised a fine family, worked the land well and always followed the Son,
+              Hang up your shovel inside of the barn; your work here on earth is done.</p>
+
+        </div>
+        <div class="col-lg-4 col-md-4 tm-footer-div">
+          <h3 class="tm-footer-div-title">Connect With me</h3>
+          
+          Suraj Sanap &nbsp;
+            <a href="https://www.linkedin.com/in/surajsanap01/" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
+            
+            
+            <a href="https://github.com/SurajSanap" class="tm-social-icon"><i class="fa fa-github"></i></a>
+            
+          
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-<footer>
-    <div class="tm-black-bg">
-      <div class="container">
-        <div class="row margin-bottom-60">
-          <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
-            <h3 class="tm-footer-div-title">Project by</h3>
-            <ul>
-              <li>Suraj Sanap</li>
-        
-              
-            </ul>
-          </nav>
-          <div class="col-lg-5 col-md-5 tm-footer-div">
-            <h3 class="tm-footer-div-title">Few words for our Indian Farmers</h3>
-            <p class="margin-top-15" align="justify">For this one farmer the worries are over, lie down and rest your head,
-              Your time has been and struggles enough, put the tractor in the shed.</p>
-
-             <p class="margin-top-15" align="justify"> Years were not easy, many downright hard, but your faith in God transcended,
-               Put away your tools and sleep in peace. The fences have all been mended.</p>
-
-              <p class="margin-top-15" align="justify">You raised a fine family, worked the land well and always followed the Son,
-                Hang up your shovel inside of the barn; your work here on earth is done.</p>
-
-          </div>
-          <div class="col-lg-4 col-md-4 tm-footer-div">
-            <h3 class="tm-footer-div-title">Connect With me</h3>
-            
-            Suraj Sanap &nbsp;
-              <a href="https://www.linkedin.com/in/surajsanap01/" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
-              
-              
-              <a href="https://github.com/SurajSanap" class="tm-social-icon"><i class="fa fa-github"></i></a>
-              
-            
-            </div>
-          </div>
-        </div>
+  <div>
+    <div class="container">
+      <div class="row tm-copyright">
+        <p class="col-lg-12 small copyright-text text-center">Copyright &copy; Suraj Sanap 2024</p>
       </div>
     </div>
-    <div>
-      <div class="container">
-        <div class="row tm-copyright">
-          <p class="col-lg-12 small copyright-text text-center">Copyright &copy; Suraj Sanap 2024</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  </div>
+</footer>
 
 {% endblock %}
