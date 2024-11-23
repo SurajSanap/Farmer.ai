@@ -145,5 +145,10 @@ def fertilizer():
 def pesticide():
     return render_template("PesticideRecommendation.html")
 
+@app.route("/chatbot.html")
+def chatbot():
+    return render_template("chatbot.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
